@@ -30,6 +30,10 @@ jobs:
         archives: 'icu qtbase qtdeclarative'
     - run: aqt install-qt linux desktop 6.2.0 --modules qtwebsockets -O /home/runner/work/Tachidesk-qtui/Qt
     
+    - run: | 
+       git clone --branch 6.2.0 --depth 1 https://github.com/qt/qtquickcontrols.git
+       qmake
+       sudo make install
         
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
