@@ -23,13 +23,11 @@ jobs:
          submodules: recursive
          
     - name: Install Qt
-      run: |
-        sudo apt-get update
-        sudo apt-get install build-essential libgl1-mesa-dev libxkbcommon-x11-0 libpulse-dev libxcb-util1 libxcb-glx0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-render0 libxcb-shape0 libxcb-shm0 libxcb-sync1 libxcb-xfixes0 libxcb-xinerama0 libxcb1 -y
-        python3 -m pip install setuptools wheel py7zr
-        python3 -m pip install aqtinstall
-        aqt install-qt linux desktop 6.2.0 --archives qtbase qtwebsockets qtquickcontrols qtquickcontrols2 -O /home/runner/work/Tachidesk-qtui/Qt
-        
+      uses: voltrare/install-qt-action@v3
+      with:
+        version: '6.2.0'
+        archives: 'qtbase qtwebsockets qtquickcontrols qtquickcontrols2'
+      
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
