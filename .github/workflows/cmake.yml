@@ -23,7 +23,7 @@ jobs:
          submodules: recursive
          
     - name: Install Qt
-      uses: jurplel/install-qt-action@v2
+      uses: jurplel/install-qt-action@master
       with:
         version: '6.2.0'
         archives: 'qtbase qtwebsockets qtquickcontrols qtquickcontrols2'
