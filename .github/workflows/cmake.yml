@@ -29,6 +29,14 @@ jobs:
         modules: 'qtwebsockets'
         archives: 'icu qtbase qtquickcontrols qtquickcontrols2'
         
+    - name: Install Qt v2
+      run: |
+        git clone --depth 1 -b 6.2.0 https://github.com/qt/qtwebsockets.git
+        cd qtwebsockets
+        qmake
+        make
+        make install
+        
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
