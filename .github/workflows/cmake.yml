@@ -26,6 +26,7 @@ jobs:
       uses: voltrare/install-qt-action@v3
       with:
         version: '6.2.0'
+        modules: 'qtbase qtwebsockets qtquickcontrols qtquickcontrols2'
         archives: 'qtbase qtwebsockets qtquickcontrols qtquickcontrols2'
       
     - name: Configure CMake
