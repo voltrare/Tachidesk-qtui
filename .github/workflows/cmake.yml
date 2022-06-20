@@ -32,6 +32,7 @@ jobs:
     
     - run: | 
        git clone --branch 6.2 --depth 1 https://github.com/qt/qtquickcontrols.git
+       cd qtquickcontrols
        qmake
        sudo make install
         
