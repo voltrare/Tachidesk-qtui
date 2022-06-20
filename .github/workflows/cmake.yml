@@ -31,7 +31,7 @@ jobs:
     - run: aqt install-qt linux desktop 6.2.0 --modules qtwebsockets -O /home/runner/work/Tachidesk-qtui/Qt
     
     - run: | 
-       git clone --branch 6.2.0 --depth 1 https://github.com/qt/qtquickcontrols.git
+       git clone --branch 6.2 --depth 1 https://github.com/qt/qtquickcontrols.git
        qmake
        sudo make install
         
